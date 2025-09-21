@@ -1,0 +1,241 @@
+.user-activity-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.user-activity {
+  display: flex;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 150px;
+  /* 프로필 영역 최소 너비 */
+}
+
+.user-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 200px;
+  position: relative;
+}
+
+.rank-badge-wrapper {
+  position: relative;
+}
+
+.user-rank-badge {
+  position: absolute;
+  top: -5px;
+  left: -8px;
+  width: 32px;
+  height: 32px;
+  background-color: #212529;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 3px solid white;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-profile-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.user-container-area {
+  display: flex;
+  gap: 20px;
+}
+
+.calendar-container{
+  justify-content: center;
+}
+
+.mini-calendar {
+  display: flex;
+  flex-wrap: wrap;
+  /* 공간이 부족하면 줄바꿈 (필요시) */
+  gap: 4px;
+  /* 네모 칸 사이의 간격 */
+  align-items: center;
+  justify-content: center;
+}
+
+.day-square {
+  width: 16px;
+  /* 굉장히 작은 네모 크기 */
+  height: 16px;
+  border-radius: 3px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.day-square:hover {
+  transform: scale(1.2);
+}
+
+/* 잔디 색상 레벨 (기존과 동일) */
+.day-square.level-0 {
+  background-color: #ebedf0;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.day-square.level-1 {
+  background-color: #9be9a8;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.day-square.level-2 {
+  background-color: #40c463;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.day-square.level-3 {
+  background-color: #30a14e;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.day-square.level-4 {
+  background-color: #216e39;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.summary-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  min-height: 50px;
+  /* 버튼과 요약 내용이 전환될 때 레이아웃이 흔들리는 것을 방지 */
+  display: flex;
+  align-items: center;
+}
+
+.summary-button {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.summary-button:hover {
+  background-color: #0b5ed7;
+}
+
+.summary-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* GPT 요약 섹션 스타일 일부 수정 */
+.gpt-summary {
+  width: 420px;
+  border-top: none;
+  /* 기존 border 제거 */
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* --- 모바일 반응형 스타일 (768px 이하) --- */
+@media (max-width: 768px) {
+  .user-container-area {
+    display: block;
+  }
+
+  .user-activity-row {
+    flex-direction: column;
+    /* 전체를 세로로 쌓음 (프로필 위, 컨텐츠 아래) */
+    align-items: stretch;
+    /* 아이템들을 컨테이너 너비에 맞게 늘림 */
+  }
+
+
+  .user-profile-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 1rem;
+    min-width: 0;
+    /* 너비 제한 해제 */
+  }
+
+  .user-rank-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    border-width: 2px;
+  }
+
+  .user-profile-header img {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+  }
+
+  .user-name {
+    font-size: 1.1rem;
+  }
+
+  .user-total-time {
+    /* 모바일에서는 총 학습 시간을 숨겨서 더 간결하게 만듭니다. */
+    display: none;
+  }
+
+  .user-content-area {
+    /* 미니 달력과 GPT 요약이 순서대로 표시됨 */
+  }
+
+  /* GPT 요약이 생성되었을 때 충분한 공간을 확보하도록 */
+  .gpt-summary {
+    min-height: 120px;
+    /* 요약 내용이 표시될 최소 높이 확보 */
+  }
+
+  .day-square:hover {
+    transform: scale(1.2);
+  }
+}

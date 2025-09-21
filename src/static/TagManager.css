@@ -1,0 +1,93 @@
+/* --- TagManager 스타일 --- */
+.tag-manager-container {
+    
+}
+.tag-manager-container h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+.tag-option.selected {
+  background-color: #1c7ed6;
+  color: white;
+  border-color: #1c7ed6;
+}
+
+/* --- LogForm 태그 섹션 스타일 수정 --- */
+.tag-section label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* --- 새 태그 생성 (입력창 + 버튼) 개선된 스타일 --- */
+.add-new-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-new-tag input {
+  flex-grow: 1;
+  border: 2px solid #dee2e6; /* 기본 테두리 */
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+  outline: none; /* 기본 포커스 아웃라인 제거 */
+}
+
+/* 입력창에 포커스가 갔을 때 스타일 */
+.add-new-tag input:focus {
+  border-color: #0d6efd; /* 파란색 테두리 */
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15); /* 은은한 그림자 효과 */
+}
+
+.add-new-tag button {
+  background-color: #343a40; /* 어두운 배경색 */
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-new-tag button:hover {
+  background-color: #495057; /* 마우스를 올리면 살짝 밝게 */
+}
+
+/* --- 모바일 반응형 스타일 (768px 이하) --- */
+@media (max-width: 768px) {
+  /* --- TagManager 제목 --- */
+  .tag-manager-container h4 {
+    font-size: 1.1rem; /* 제목 폰트 크기 축소 */
+  }
+
+  /* --- '내 태그 목록', '새 태그 생성' 라벨 --- */
+  .existing-tags p, .add-new-tag p {
+    font-size: 0.85rem;
+  }
+
+  /* --- 태그 옵션 버튼 --- */
+  .tag-option {
+    font-size: 0.85rem; /* 태그 버튼 폰트 크기 축소 */
+    padding: 0.3rem 0.8rem;
+  }
+  
+  /* --- '선택된 태그' 라벨 --- */
+  .tag-section label {
+    font-size: 0.9rem;
+  }
+
+  /* --- 새 태그 입력창 --- */
+  .add-new-tag input {
+    font-size: 0.9rem;
+  }
+
+  /* --- 새 태그 '추가' 버튼 --- */
+  .add-new-tag button {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,305 @@
+body {
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #212529;
+  line-height: 1.6;
+}
+
+.app-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  margin-bottom: 20px;
+}
+
+.display-container{
+  width: 920px;
+}
+
+.react-datepicker-wrapper{
+  width: 100%;
+}
+
+/* --- 모바일 반응형 스타일 --- */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 16px; /* 기존 32px에서 줄임 */
+  }
+  
+  .display-container{
+    width: auto;
+  }
+
+  .app-header h1 {
+    font-size: 1.8rem; /* 기존 2.2rem에서 줄임 */
+  }
+  
+  .mini-calendar {
+    gap: 2px; /* 잔디 사이 간격을 줄임 */
+  }
+  
+  .day-square {
+    width: 12px; /* 잔디 크기를 줄임 */
+    height: 12px;
+  }
+}
+
+.app-header h3 {
+  margin: 0px;
+  padding: 0 0 20px 0;
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+/* LogForm 스타일 */
+.log-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+.log-form input,
+.log-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-sizing: border-box;
+  /* padding을 포함하여 width 계산 */
+}
+
+.log-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.log-form button {
+  padding: 12px 20px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.log-form button:hover {
+  background-color: #0b5ed7;
+}
+
+/* LogList & LogItem 스타일 */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #6c757d;
+  padding: 40px 0;
+}
+
+.log-item {
+  /* width: 1000px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.log-details {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.log-subject {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.log-content {
+  margin: 0 0 12px 0;
+  color: #495057;
+  white-space: pre-wrap;
+  /* 줄바꿈 적용 */
+}
+
+.log-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.log-time::before {
+  content: '⏰';
+  margin-right: 4px;
+}
+
+.log-date::before {
+  content: '📅';
+  margin-right: 4px;
+}
+
+.delete-button {
+  background-color: transparent;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  /* 버튼 크기 줄어들지 않게 */
+}
+
+.delete-button:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+/* --- 태그 UI 스타일 --- */
+.tag-section {
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.selected-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 32px;
+  /* 태그가 없을 때도 높이 유지 */
+
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e7f5ff;
+  color: #1c7ed6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tag-pill button {
+  background: none;
+  border: none;
+  color: #1c7ed6;
+  margin-left: 0.5rem;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.add-tag-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 1px dashed #ced4da;
+  color: #495057;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-tag-button:hover {
+  background-color: #f8f9fa;
+}
+
+.tag-selector {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.existing-tags p,
+.add-new-tag p {
+  margin: 0 0 0.75rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.existing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #e9ecef;
+  align-items: center;
+}
+
+.tag-option {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.add-new-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.add-new-tag input {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+.add-new-tag button {
+  padding: 0.1rem 0.5rem;
+  font-size: 0.9rem;
+  /* 버튼 스타일 재사용 */
+}
+
+/* 로그 아이템 하단에 표시될 태그 컨테이너 */
+.log-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  /* 위아래 다른 요소와 간격 */
+}
+
+/* 개별 태그 '알약' 스타일 */
+.tag-pill-display {
+  background-color: #f1f3f5;
+  /* 밝은 회색 배경 */
+  color: #495057;
+  /* 어두운 회색 텍스트 */
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  /* 작게 표시 */
+  font-weight: 500;
+}

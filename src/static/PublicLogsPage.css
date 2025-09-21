@@ -1,0 +1,53 @@
+/* --- 사용자별 활동 현황 UI 스타일 --- */
+.user-activity-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 각 사용자 행 사이의 간격 */
+}
+
+/* --- 모바일 반응형 스타일 (768px 이하) --- */
+@media (max-width: 768px) {
+  /* --- 페이지 헤더 --- */
+  .app-header h1 {
+    font-size: 1.6rem; /* 제목 폰트 크기 축소 */
+  }
+  .app-header p {
+    font-size: 0.9rem; /* 부제 폰트 크기 축소 */
+  }
+
+  /* --- 필터 컨트롤 --- */
+  .filter-controls {
+    flex-direction: column; /* 년/월 선택을 세로로 쌓음 */
+  }
+
+  /* --- 사용자별 활동 행 --- */
+  .user-activity-main {
+    flex-direction: column; /* 프로필과 미니 달력을 세로로 쌓음 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    gap: 0.75rem;
+  }
+
+  .user-profile {
+    min-width: 0; /* 최소 너비 제한 제거 */
+  }
+  
+  .mini-calendar {
+    width: 100%; /* 미니 달력이 전체 너비를 차지하도록 설정 */
+  }
+  
+  /* 잔디 크기를 화면에 맞게 살짝 줄임 */
+  .day-square {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* --- GPT 요약 섹션 --- */
+  .summary-button {
+    width: 100%; /* 버튼이 전체 너비를 차지하도록 설정 */
+  }
+
+  .summary-text {
+    font-size: 0.85rem; /* 요약 텍스트 크기 축소 */
+  }
+}

@@ -1,0 +1,19 @@
+#study-log-contents {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* --- 모바일 반응형 스타일 --- */
+@media (max-width: 768px) {
+  #study-log-contents {
+    /* (변경) 모바일에서는 세로로 쌓이도록 변경 */
+    flex-direction: column;
+  }
+}
+#log-enroll-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}

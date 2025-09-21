@@ -1,0 +1,81 @@
+
+/* 학습 시간 컴포넌트 */
+/* ... 기존 CSS 코드 맨 아래에 이어서 추가 ... */
+
+.time-log-container {
+  margin: 0 auto 2rem auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+}
+
+.time-log-header h3{
+  padding: 0 0 20px 0;
+  margin: 0px;
+  color: #333;
+}
+
+.time-stats-wrapper {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.time-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.time-stat-item .label {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.time-stat-item .time {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+/* 어제 학습 시간 통계 아이템을 위한 특별 스타일 */
+.time-stat-item.yesterday-stat .time {
+  color: #d9480f; /* 짙은 빨강/주황 계열 텍스트 색상 */
+}
+
+
+/* --- 모바일 반응형 스타일 (768px 이하) --- */
+@media (max-width: 768px) {
+  .time-log-container {
+    /* 전체 컨테이너의 좌우 여백을 줄여 공간을 확보합니다. */
+    padding: 20px; 
+  }
+
+  .time-log-header h3 {
+    /* 제목 아래 여백을 살짝 줄입니다. */
+    padding-bottom: 16px;
+  }
+
+  .time-stats-wrapper {
+    /* flex 아이템들이 한 줄에 다 들어가지 않으면 다음 줄로 넘어가도록 설정합니다. */
+    flex-wrap: wrap; 
+    /* 아이템 사이의 수직 간격을 추가합니다. */
+    gap: 24px; 
+  }
+
+  .time-stat-item {
+    /* 각 아이템이 부모 너비의 약 절반을 차지하도록 설정하여 2x2 격자를 만듭니다. */
+    flex-basis: calc(50% - 12px); 
+  }
+
+  .time-stat-item .label {
+    /* 라벨 폰트 크기를 약간 줄입니다. */
+    font-size: 0.9rem;
+  }
+
+  .time-stat-item .time {
+    /* 시간 폰트 크기를 모바일 화면에 맞게 줄입니다. */
+    font-size: 1.5rem;
+  }
+}

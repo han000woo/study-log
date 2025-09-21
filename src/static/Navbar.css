@@ -1,0 +1,131 @@
+/* 네비게이션 바 스타일 */
+.navbar-container {
+  position: relative;
+}
+
+.navbar {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #495057;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+/* 활성화된 링크 스타일 */
+.nav-link.active {
+  color: #0d6efd;
+  border-bottom-color: #0d6efd;
+}
+
+/* 메인 컨텐츠 영역 패딩 */
+.main-content {
+  padding: 0 20px;
+}
+
+/* 햄버거 메뉴는 데스크톱에서 숨김 */
+.hamburger-menu {
+  display: none;
+}
+
+.mobile-nav-menu {
+  display: none;
+}
+
+/* --- 모바일 반응형 스타일 (768px 이하) --- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    margin-bottom: 0;
+    /* Navbar 자체의 하단 마진 제거 */
+  }
+
+  /* 기존 메뉴 숨기기 */
+  .nav-menu {
+    display: none;
+  }
+
+  /* 햄버거 메뉴 아이콘 보이기 */
+  .hamburger-menu {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #343a40;
+    z-index: 1001;
+    /* 메뉴 위에 위치하도록 */
+  }
+
+  /* 모바일용 메뉴 스타일 수정 */
+  .mobile-nav-menu {
+    list-style: none;
+    display: flex;
+    /* display는 항상 flex로 유지 */
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    /* 1. position: absolute 제거 -> 일반적인 문서 흐름을 따르도록 변경 */
+    /* position: absolute; */
+
+    /* 2. 너비와 위치 관련 속성 수정 */
+    width: 100%;
+    background-color: white;
+    padding: 0;
+
+    /* 그림자를 위쪽에만 주어 경계를 명확하게 함 */
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+
+    /* --- 애니메이션을 위한 속성 수정 --- */
+
+    /* 3. 높이를 기준으로 애니메이션을 하도록 변경 */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    /* 내용이 넘치면 숨김 */
+
+    &.open {
+      padding: 2rem 0;
+      /* 펼쳐졌을 때 위아래 여백 추가 */
+
+      max-height: 500px;
+      /* 충분한 높이 값으로 설정 */
+      opacity: 1;
+    }
+
+    /* 4. max-height를 transition 대상으로 추가 */
+    transition: max-height 0.4s ease-in-out,
+    opacity 0.3s ease-in-out,
+    padding 0.4s ease-in-out;
+  }
+}
