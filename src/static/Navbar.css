@@ -37,6 +37,35 @@
   transition: all 0.2s;
 }
 
+/* 로그아웃 버튼 기본 스타일 */
+.nav-button {
+  background: none;
+  /* 배경 제거 */
+  border: none;
+  /* 테두리 제거 */
+  color: #ff4d4d;
+  /* 텍스트 색상을 약간의 붉은 톤으로 */
+  font-size: 1rem;
+  /* 폰트 크기 */
+  font-weight: bold;
+  /* 폰트 굵기 */
+  cursor: pointer;
+  /* 마우스 커서를 포인터로 변경 */
+  /* 내부 여백 */
+  border-radius: 5px;
+  /* 모서리를 둥글게 */
+  transition: background-color 0.2s, color 0.2s;
+  /* 부드러운 색상 전환 효과 */
+}
+
+/* 마우스를 올렸을 때 스타일 */
+.nav-button:hover {
+  background-color: #ffe5e5;
+  /* 연한 붉은 배경색 */
+  color: #d93636;
+  /* 더 진한 붉은 텍스트 색상 */
+}
+
 .nav-link:hover {
   color: #0d6efd;
 }

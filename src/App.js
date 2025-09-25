@@ -6,30 +6,31 @@ import AboutPage from './page/AboutPage';
 import LoginPage from './page/LoginPage';
 import PublicLogsPage from './page/PublicLogsPage';
 import './App.css';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main className="main-content">
-        <Routes>
-          {/* 로그인이 필요한 페이지는 PrivateRoute로 감싸줍니다. */}
-          <Route
-            path="/"
-            element={
-              <StudyLogPage />
-
-              // <PrivateRoute>
-              //   <StudyLogPage />
-              // </PrivateRoute>
-            }
-          />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/public-logs" element={<PublicLogsPage />} />
-
-        </Routes>
-      </main>
+      {/* AuthProvider가 Navbar와 Routes를 모두 감싸도록 수정 */}
+      <AuthProvider>
+        <Navbar /> {/* ✅ 이제 인증 상태 변화를 알 수 있음 */}
+        <main className="main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                // <StudyLogPage />
+                <PrivateRoute>
+                  <StudyLogPage />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/public-logs" element={<PublicLogsPage />} />
+          </Routes>
+        </main>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactDatePicker from '../../util/ReactDatePicker';
+import { createLog } from '../../api/logs';
 
 // 오늘 날짜를 YYYY-MM-DD 형식으로 가져오는 함수
 const getTodayDate = () => {
